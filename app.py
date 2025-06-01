@@ -26,6 +26,7 @@ def video_feed(filename):
     video_path = os.path.join(UPLOAD_FOLDER, filename)
     return Response(process_video(video_path, current_stats), mimetype='multipart/x-mixed-replace; boundary=frame')
 
+
 @app.route('/stats')
 def stats():
     return jsonify(current_stats)
